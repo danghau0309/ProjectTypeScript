@@ -465,7 +465,8 @@ h3 {
     border-radius: 8px;
 }
 
-form #btnSignIn {
+form #btnSignIn,
+#btnSignUp {
     display: block;
     width: 100%;
     height: 40px;
@@ -577,7 +578,8 @@ form #btnSignIn {
     margin: 40px auto;
     width: 90%;
     text-align: center;
-
+    border-collapse: collapse;
+    border: 1px solid #eee;
 
 }
 

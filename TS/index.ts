@@ -3,6 +3,8 @@ import { registerUser, btnSignUp } from "./register.js";
 import { renderDataToHtml, Product } from "./show.js";
 import { iconUser, boxAuth, checkInput, notifi, displayAuth, handleForm } from "./boxAuth.js";
 import { renderCart } from "./showCart.js";
+import { renderProductList } from "./admin.js";
+
 // Login user
 btnSignIn?.addEventListener("click", handleSignIn);
 document.addEventListener("DOMContentLoaded", statusLoggedIn);
@@ -36,3 +38,5 @@ renderDataToHtml().then(() => {
 });
 //Render Cart
 renderCart();
+//Render Admin
+renderProductList();

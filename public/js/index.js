@@ -3,6 +3,7 @@ import { registerUser, btnSignUp } from "./register.js";
 import { renderDataToHtml } from "./show.js";
 import { iconUser, checkInput, displayAuth, handleForm } from "./boxAuth.js";
 import { renderCart } from "./showCart.js";
+import { renderProductList } from "./admin.js";
 btnSignIn === null || btnSignIn === void 0 ? void 0 : btnSignIn.addEventListener("click", handleSignIn);
 document.addEventListener("DOMContentLoaded", statusLoggedIn);
 textLoggedIn === null || textLoggedIn === void 0 ? void 0 : textLoggedIn.addEventListener("click", changeStatus);
@@ -31,3 +32,4 @@ renderDataToHtml().then(() => {
     });
 });
 renderCart();
+renderProductList();
