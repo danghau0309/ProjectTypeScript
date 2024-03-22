@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html" class="logo"><img src="../public/img/logo.png" alt="ảnh lỗi" /></a>
+			<i class="bx bx-menu" id="icon-menu"></i>
+			<ul class="navbar">
+				<li><a href="index.html">Trang chủ</a></li>
+				<li><a href="">Sản phẩm </a></li>
+				<li><a href="">Tin Tức</a></li>
+			</ul>
+			<div class="header-icons">
+				<span id="icon-user">Login</span>
+			</div>
+			<div class="box-auth" id="box-auth">
+				<a href="login.html"
+					><span><i class="bx bx-log-in"></i> Đăng nhập</span></a
+				>
+				<a href=""
+					><span><i class="bx bx-user-plus"></i> Đăng kí</span></a
+				>
+			</div>
+		</header>
+		<section id="login">
+			<div class="container-login">
+				<div class="item1">
+					<img src="../public/img/home.png" alt="" />
+				</div>
+				<div class="item2">
+					<div class="item-right">
+						<h2>Dev_snake</h2>
+						<span class="geeting">Welcome Back!</span>
+						<form class="form-login">
+							<input
+								type="text"
+								placeholder="Enter Username"
+								name="username"
+								id="username"
+							/>
+							<input
+								type="password"
+								placeholder="Enter password"
+								name="password"
+								id="password"
+							/>
+							<input
+								type="password"
+								placeholder="Enter  the password"
+								name="re-enter"
+								id="re-enter"
+							/>
+							<input type="email" placeholder="Enter email" name="email" id="email" />
+							<button id="btnSignUp" type="submit">SignUp</button>
+						</form>
+						<div class="option-login">
+							<button><i class="bx bxl-google"></i> Continue with Google</button>
+							<button><i class="bx bxl-twitter"></i>Continue with Twiter</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script type="module" src="../public/js/index.js"></script>
+	</body>
+</html>

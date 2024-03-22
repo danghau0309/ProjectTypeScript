@@ -1,0 +1,78 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"title": "Tai nghe vipvip Tai nghe Tí m",
+			"description": "An apple mobile which is nothing like apple",
+			"price": 549,
+			"rating": 4.69,
+			"image": "shop1.png"
+		},
+		{
+			"id": 2,
+			"title": "Tai nghe vipvip Tai nghe Đỏ ",
+			"description": "An apple mobile which is nothing like apple",
+			"price": 549,
+			"rating": 4.69,
+			"image": "shop2.png"
+		},
+		{
+			"id": 3,
+			"title": "Tai nghe vipvip Tai nghe Bl ack vipBro siêu c",
+			"description": "An apple mobile which is nothing like apple",
+			"price": 549,
+			"rating": 4.69,
+			"image": "shop3.png"
+		},
+		{
+			"id": 4,
+			"title": "Tai nghe vipvip Tai nghe Bl ack vipBro siêu c",
+			"description": "An apple mobile which is nothing like apple",
+			"price": 549,
+			"rating": 4.69,
+			"image": "shop4.png"
+		},
+		{
+			"id": 5,
+			"title": "Tai nghe vipvip Tai nghe Bl ack vipBro siêu c",
+			"description": "An apple mobile which is nothing like apple",
+			"price": 549,
+			"rating": 4.69,
+			"image": "shop5.png"
+		}
+	],
+	"users": [
+		{
+			"id": 1,
+			"username": "haudang",
+			"password": "haudang123",
+			"email": "dangvanhaufpt2019@gmail.com",
+			"role": "1"
+		},
+		{
+			"id": 2,
+			"username": "haudev",
+			"password": "kHMwDqyLSvewhU5",
+			"email": "fdf@gmail.com"
+		},
+		{
+			"id": 3,
+			"username": "haudev",
+			"password": "hhhhhhhhhh",
+			"email": "dangvanhaufpt2019@gmail.com",
+			"role": "Người dùng"
+		}
+	],
+	"voucher": [
+		{
+			"voucher_Id": 1,
+			"voucher": "GIAMTIENSHIP",
+			"percentDiscount": 20
+		},
+		{
+			"voucher_Id": 2,
+			"voucher": "SALE50",
+			"percentDiscount": 50
+		}
+	]
+}
