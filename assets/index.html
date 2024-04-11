@@ -17,14 +17,8 @@
 		<header>
 			<a href="index.html" class="logo"><img src="../public/img/logo.png" alt="ảnh lỗi" /></a>
 			<i class="bx bx-menu" id="icon-menu"></i>
-			<ul class="navbar">
-				<li><a href="index.html">Trang chủ</a></li>
-				<li><a href="">Sản phẩm </a></li>
-				<li><a href="">Tin Tức</a></li>
-			</ul>
+			<ul class="navbar" id="navbar"></ul>
 			<div class="header-icons">
-				<!-- <i class="bx bx-search-alt-2"></i> <i class="bx bx-cart"></i>
-				<i class="bx bx-user"></i>  -->
 				<span id="icon-user">Login</span>
 			</div>
 			<div class="box-auth" id="box-auth">
@@ -33,6 +27,9 @@
 				>
 				<a href="signup.html"
 					><span id="text-register"><i class="bx bx-user-plus"></i> Đăng kí</span></a
+				>
+				<a href="cart.html"
+					><span><i class="bx bxs-cart"></i> Giỏ hàng</span></a
 				>
 			</div>
 		</header>
@@ -126,7 +123,7 @@
 				/>
 			</div>
 			<h2 class="featured-title">Sản Phẩm bán chạy</h2>
-			<div class="box-container">
+			<div class="box-container" id="bestseller">
 				<div class="box">
 					<form method="POST" action="">
 						<span class="bestSelling"

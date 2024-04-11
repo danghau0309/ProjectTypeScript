@@ -1,10 +1,10 @@
-interface User {
+export interface User {
 	username: string;
 	password: string;
 	email: string;
 }
-const btnSignIn = document.getElementById("btnSignIn") as HTMLButtonElement;
-const handleSignIn = (e: Event) => {
+export const btnSignIn = document.getElementById("btnSignIn") as HTMLButtonElement;
+export const handleSignIn = (e: Event) => {
 	e.preventDefault();
 	const username = (document.getElementById("username") as HTMLInputElement).value;
 	const password = (document.getElementById("password") as HTMLInputElement).value;
@@ -18,7 +18,7 @@ const handleSignIn = (e: Event) => {
 			waringForm.remove();
 		}, 1000);
 	} else {
-		fetch("http://localhost:3000/users")
+		fetch("http://localhost:5000/users")
 			.then((res) => {
 				if (!res.ok) {
 					throw new Error("Network response was not ok");
@@ -31,8 +31,8 @@ const handleSignIn = (e: Event) => {
 				);
 				if (findUsersExist) {
 					localStorage.setItem("isLoggedIn", JSON.stringify(true));
+					localStorage.setItem("LoggedInUser", JSON.stringify(username));
 					const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") ?? "false");
-					console.log("users found");
 					window.location.reload();
 					window.location.href = "./index.html";
 				} else {
@@ -49,7 +49,7 @@ const handleSignIn = (e: Event) => {
 			.catch((err) => console.error(err));
 	}
 };
-const statusLoggedIn = () => {
+export const statusLoggedIn = () => {
 	const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") ?? "false");
 	if (isLoggedIn) {
 		const textLoggedIn = document.getElementById("text-login") as HTMLSpanElement;
@@ -58,17 +58,17 @@ const statusLoggedIn = () => {
 		const profile = document.createElement("span") as HTMLSpanElement;
 		textLoggedIn.innerHTML = "<i class='bx bx-log-out'></i> Đăng xuất";
 		textLoggedIn.style.color = "#dd3a73";
-		profile.innerHTML = "<i class='bx bxs-user-account'></i> Hồ sơ";
+		profile.innerHTML = "<a href='profile.html'><i class='bx bxs-user-account'></i> Hồ sơ</a>";
 		profile.style.fontWeight = "bold";
 		boxAuth.appendChild(profile);
 		textRegister.style.display = "none";
 	}
 };
-const textLoggedIn = document.getElementById("text-login") as HTMLSpanElement;
-const changeStatus = () => {
+export const textLoggedIn = document.getElementById("text-login") as HTMLSpanElement;
+export const changeStatus = () => {
 	const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") ?? "false");
 	if (isLoggedIn) {
 		localStorage.setItem("isLoggedIn", JSON.stringify(false));
+		localStorage.removeItem("LoggedInUser");
 	}
 };
-export { handleSignIn, btnSignIn, statusLoggedIn, changeStatus, textLoggedIn };

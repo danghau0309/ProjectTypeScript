@@ -1,35 +1,52 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-const renderDataToHtml = () => __awaiter(void 0, void 0, void 0, function* () {
+const renderDataToHtml = async () => {
     try {
         const boxContainer = document.querySelector(".box-container");
         if (boxContainer !== null) {
-            const res = yield fetch("http://localhost:3000/products");
-            const data = yield res.json();
+            const res = await fetch("http://localhost:5000/products");
+            const data = await res.json();
             boxContainer.innerHTML = "";
-            data.forEach((product) => {
+            data.forEach(({ title, description, price, image, id }) => {
                 boxContainer.innerHTML += `
                 <div class="box">
                     <div class="box-image">
-                        <img src="../public/img/${product.image}" alt="" />
+					<a href="detail.html?productId=${id}">
+                        <img src="../public/img/${image}" alt="" /></a>
                     </div>
-                    <span class="price text">Giá: ${product.price}$</span>
-                    <span class="name">Tên sản phẩm: ${product.title}</span>
-                    <button id="btn" data-value='${product.id}'>Mua ngay</button>
-                </div>
-            `;
+                    <span class="price text">Giá: ${price}$</span>
+                    <span class="name">Tên sản phẩm: ${title}</span>
+                    <button id="btn" data-value='${id}'>Mua ngay</button>
+                </div>`;
+            });
+            const boxBestseller = document.getElementById("bestseller");
+            const bestseller = data.filter((item) => item.bestseller == 1);
+            if (boxBestseller !== null) {
+                boxBestseller.innerHTML = "";
+            }
+            bestseller.forEach(({ title, description, price, image, id }) => {
+                if (boxBestseller !== null) {
+                    boxBestseller.innerHTML += `<div class="box">
+								<span class="bestSelling"><i class="bx bx-purchase-tag-alt"></i> Bán chạy</span>
+								<div class="box-image">
+								<a href="detail.html?productId=${id}"><img src="../public/img/${image}" alt=""/></a>
+								</div>
+								<span class="price text">Giá : ${price} $</span>
+								<a href="detail.html?productId=${id}">
+								<span class="name text">Tên sản phẩm : ${title}</span>
+								</a>
+								<button id="btn" data-value='${id}'>Mua ngay</button>
+								</div>`;
+                    const btn = document.querySelectorAll("#btn");
+                    btn.forEach((el) => {
+                        el.onclick = () => {
+                            alert("Đã Thêm vào giỏ hàng");
+                        };
+                    });
+                }
             });
         }
     }
     catch (err) {
         console.log(err);
     }
-});
+};
 export { renderDataToHtml };

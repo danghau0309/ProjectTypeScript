@@ -2,14 +2,22 @@ import { handleSignIn, btnSignIn, statusLoggedIn, textLoggedIn, changeStatus } f
 import { registerUser, btnSignUp } from "./register.js";
 import { renderDataToHtml } from "./show.js";
 import { iconUser, checkInput, displayAuth, handleForm } from "./boxAuth.js";
-import { renderCart } from "./showCart.js";
-import { renderProductList } from "./admin.js";
-btnSignIn === null || btnSignIn === void 0 ? void 0 : btnSignIn.addEventListener("click", handleSignIn);
+import { renderProductList, addProductButton, addProduct } from "./admin.js";
+import { showDetails } from "./productDetail.js";
+import { handleCart } from "./cart/handleCart.js";
+import { apiDistrict } from "./api/api.js";
+import { orderList, orderDetail } from "./order_manager.js";
+import { header } from "./header/header.js";
+import { handleCate } from "./category/category.js";
+import { profile } from "./profile.js";
+import { changePassword } from "./changePassword.js";
+showDetails();
+btnSignIn?.addEventListener("click", handleSignIn);
 document.addEventListener("DOMContentLoaded", statusLoggedIn);
-textLoggedIn === null || textLoggedIn === void 0 ? void 0 : textLoggedIn.addEventListener("click", changeStatus);
-btnSignUp === null || btnSignUp === void 0 ? void 0 : btnSignUp.addEventListener("click", registerUser);
+textLoggedIn?.addEventListener("click", changeStatus);
+btnSignUp?.addEventListener("click", registerUser);
 iconUser.addEventListener("click", displayAuth);
-checkInput === null || checkInput === void 0 ? void 0 : checkInput.addEventListener("click", handleForm);
+checkInput?.addEventListener("click", handleForm);
 const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 localStorage.setItem("cart", JSON.stringify(cart));
 renderDataToHtml().then(() => {
@@ -17,13 +25,21 @@ renderDataToHtml().then(() => {
     btns.forEach((btn) => {
         btn.addEventListener("click", () => {
             const productId = Number(btn.getAttribute("data-value"));
-            fetch("http://localhost:3000/products")
+            fetch("http://localhost:5000/products")
                 .then((res) => res.json())
                 .then((products) => {
-                const id = products.find((item) => item.id == productId);
-                cart.push(id);
-                localStorage.setItem("cart", JSON.stringify(cart));
-                window.location.reload();
+                const findIdProductOfCart = products.find((item) => item.id == productId);
+                const cartList = JSON.parse(localStorage.getItem("cart") || "[]");
+                const existingItemIndex = cartList.findIndex((item) => item.id == findIdProductOfCart.id);
+                console.log(existingItemIndex);
+                if (existingItemIndex !== -1) {
+                    cartList[existingItemIndex].quantity += 1;
+                    localStorage.setItem("cart", JSON.stringify(cartList));
+                }
+                else {
+                    cart.push(findIdProductOfCart);
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                }
             })
                 .catch((err) => {
                 console.log(err);
@@ -31,5 +47,16 @@ renderDataToHtml().then(() => {
         });
     });
 });
-renderCart();
 renderProductList();
+addProductButton?.addEventListener("click", (e) => {
+    e.preventDefault();
+    addProduct(e);
+});
+apiDistrict();
+handleCart();
+orderList();
+orderDetail();
+header();
+handleCate();
+profile();
+changePassword();

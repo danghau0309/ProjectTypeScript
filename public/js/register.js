@@ -42,7 +42,7 @@ const registerUser = (e) => {
             email,
             role: "Người dùng"
         };
-        fetch("http://localhost:3000/users", {
+        fetch("http://localhost:5000/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

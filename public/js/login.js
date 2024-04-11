@@ -1,5 +1,5 @@
-const btnSignIn = document.getElementById("btnSignIn");
-const handleSignIn = (e) => {
+export const btnSignIn = document.getElementById("btnSignIn");
+export const handleSignIn = (e) => {
     e.preventDefault();
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -14,7 +14,7 @@ const handleSignIn = (e) => {
         }, 1000);
     }
     else {
-        fetch("http://localhost:3000/users")
+        fetch("http://localhost:5000/users")
             .then((res) => {
             if (!res.ok) {
                 throw new Error("Network response was not ok");
@@ -22,12 +22,11 @@ const handleSignIn = (e) => {
             return res.json();
         })
             .then((users) => {
-            var _a;
             const findUsersExist = users.find((user) => user.username === username && user.password === password);
             if (findUsersExist) {
                 localStorage.setItem("isLoggedIn", JSON.stringify(true));
-                const isLoggedIn = JSON.parse((_a = localStorage.getItem("isLoggedIn")) !== null && _a !== void 0 ? _a : "false");
-                console.log("users found");
+                localStorage.setItem("LoggedInUser", JSON.stringify(username));
+                const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") ?? "false");
                 window.location.reload();
                 window.location.href = "./index.html";
             }
@@ -45,9 +44,8 @@ const handleSignIn = (e) => {
             .catch((err) => console.error(err));
     }
 };
-const statusLoggedIn = () => {
-    var _a;
-    const isLoggedIn = JSON.parse((_a = localStorage.getItem("isLoggedIn")) !== null && _a !== void 0 ? _a : "false");
+export const statusLoggedIn = () => {
+    const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") ?? "false");
     if (isLoggedIn) {
         const textLoggedIn = document.getElementById("text-login");
         const textRegister = document.getElementById("text-register");
@@ -55,18 +53,17 @@ const statusLoggedIn = () => {
         const profile = document.createElement("span");
         textLoggedIn.innerHTML = "<i class='bx bx-log-out'></i> Đăng xuất";
         textLoggedIn.style.color = "#dd3a73";
-        profile.innerHTML = "<i class='bx bxs-user-account'></i> Hồ sơ";
+        profile.innerHTML = "<a href='profile.html'><i class='bx bxs-user-account'></i> Hồ sơ</a>";
         profile.style.fontWeight = "bold";
         boxAuth.appendChild(profile);
         textRegister.style.display = "none";
     }
 };
-const textLoggedIn = document.getElementById("text-login");
-const changeStatus = () => {
-    var _a;
-    const isLoggedIn = JSON.parse((_a = localStorage.getItem("isLoggedIn")) !== null && _a !== void 0 ? _a : "false");
+export const textLoggedIn = document.getElementById("text-login");
+export const changeStatus = () => {
+    const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") ?? "false");
     if (isLoggedIn) {
         localStorage.setItem("isLoggedIn", JSON.stringify(false));
+        localStorage.removeItem("LoggedInUser");
     }
 };
-export { handleSignIn, btnSignIn, statusLoggedIn, changeStatus, textLoggedIn };

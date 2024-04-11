@@ -41,16 +41,32 @@
 				<div class="card-left">
 					<div class="card-item">
 						<h3>Thêm sản phẩm</h3>
-						<form action="" method="POST">
+						<form id="addProductForm">
 							<label for="">Tên sản phẩm :</label><br />
-							<input type="text" placeholder="Tên sản phẩm" name="name" /><br />
+							<input
+								type="text"
+								placeholder="Tên sản phẩm"
+								name="name"
+								id="name"
+							/><br />
 							<label for="">Giá :</label><br />
-							<input type="text" placeholder="Nhập giá sản phẩm" name="price" /><br />
+							<input
+								type="text"
+								placeholder="Nhập giá sản phẩm"
+								name="price"
+								id="price"
+							/><br />
 							<label for="">Mô tả :</label><br />
-							<input type="text" placeholder="Nhập mô tả " name="description" /><br />
+							<input
+								type="text"
+								placeholder="Nhập mô tả "
+								name="description"
+								id="description"
+							/><br />
 							<label for="">Hình ảnh :</label><br />
-							<input type="file" name="image" /><br />
-							<button id="btn" type="submit">Thêm sản phẩm</button>
+							<input type="file" name="fileUpload" id="fileUpload" /><br />
+							<button class="addProductBtn" type="submit">Thêm sản phẩm</button>
+							<button class="updateProduct" type="submit">Cập nhật sản phẩm</button>
 						</form>
 					</div>
 				</div>
@@ -64,22 +80,7 @@
 								<th>Mô Tả</th>
 							</tr>
 						</thead>
-						<tbody id="productList">
-							<!-- <tr>
-								<td>Đồng hồ tím</td>
-								<td>
-									<img src="../public/img/shop2.png" alt="" class="img-admin" />
-								</td>
-								<td class="price-admin">100 $</td>
-								<td>Tai nghe siêu cấp</td>
-								<td class="action">
-									<button class="bx bx-trash"></button>
-									<a href="">
-										<i class="bx bx-edit-alt"></i>
-									</a>
-								</td>
-							</tr> -->
-						</tbody>
+						<tbody id="productList"></tbody>
 					</table>
 				</div>
 			</div>

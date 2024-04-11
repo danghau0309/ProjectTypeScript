@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html" class="logo"><img src="../public/img/logo.png" alt="ảnh lỗi" /></a>
+			<i class="bx bx-menu" id="icon-menu"></i>
+			<ul class="navbar">
+				<li><a href="index.html">Trang chủ</a></li>
+				<li><a href="">Sản phẩm </a></li>
+				<li><a href="">Tin Tức</a></li>
+			</ul>
+			<div class="header-icons">
+				<!-- <i class="bx bx-search-alt-2"></i> <i class="bx bx-cart"></i>
+				<i class="bx bx-user"></i>  -->
+				<span id="icon-user">Login</span>
+			</div>
+			<div class="box-auth" id="box-auth">
+				<a href="login.html"
+					><span id="text-login"><i class="bx bx-log-in"></i> Đăng nhập</span></a
+				>
+				<a href="signup.html"
+					><span id="text-register"><i class="bx bx-user-plus"></i> Đăng kí</span></a
+				>
+			</div>
+		</header>
+		<section>
+			<div id="order_list">
+				<p class="title_infor">Thông tin đơn hàng</p>
+				<div class="container_table">
+					<table class="container_list" border="1">
+						<thead id="table_head">
+							<tr>
+								<th>Họ và tên</th>
+								<th>Số điện thoại</th>
+								<th>Email</th>
+								<th>Địa chỉ</th>
+								<th>Trạng thái</th>
+								<th>Chi tiết đơn hàng</th>
+								<th>Xác nhận</th>
+							</tr>
+						</thead>
+						<tbody id="table_body">
+							<tr>
+								<td>hâuu</td>
+								<td>0337171563</td>
+								<td><span id="text_email">dangvanhau@gmail.com</span></td>
+								<td>Quảng ngãi</td>
+								<td><span class="order_status"> </span></td>
+								<td>
+									<span id="text">
+										<a href="">xem chi tiết</a>
+									</span>
+								</td>
+								<td><button class="order_confirm">Xác nhận anh hiéu</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<script type="module" src="../public/js/index.js"></script>
+	</body>
+</html>

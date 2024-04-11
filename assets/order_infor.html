@@ -1,0 +1,138 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html" class="logo"><img src="../public/img/logo.png" alt="ảnh lỗi" /></a>
+			<i class="bx bx-menu" id="icon-menu"></i>
+			<ul class="navbar">
+				<li><a href="index.html">Trang chủ</a></li>
+				<li><a href="">Sản phẩm </a></li>
+				<li><a href="">Tin Tức</a></li>
+			</ul>
+			<div class="header-icons">
+				<span id="icon-user">Login</span>
+			</div>
+			<div class="box-auth" id="box-auth">
+				<a href="login.html"
+					><span id="text-login"><i class="bx bx-log-in"></i> Đăng nhập</span></a
+				>
+				<a href="signup.html"
+					><span id="text-register"><i class="bx bx-user-plus"></i> Đăng kí</span></a
+				>
+				<a href="cart.html"
+					><span><i class="bx bxs-cart"></i> Giỏ hàng</span></a
+				>
+			</div>
+		</header>
+
+		<section id="payment_infor">
+			<div id="block_infor_title">
+				<p>Thông tin :</p>
+			</div>
+			<div>
+				<div class="block_infor">
+					<div class="view_list">
+						<div class="view_list_wrapper">
+							<div class="item">
+								<img src="" alt="" class="payment_img" />
+								<div class="item_infor">
+									<span class="item_name">Tên sản phẩm : {{this.name}}</span>
+									<div class="box_price_quantity">
+										<span>Giá 1 sản phẩm : {{this.price}} $</span>
+										<span class="item_price"
+											>Giá tổng sản phẩm : {{this.total}} $</span
+										>
+										<span class="item_quantity"
+											>Số lượng : {{this.quantity}}</span
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="block_customer">
+						<p>Thông tin khách hàng</p>
+						<div class="block_customer_wrapper">
+							<div class="block_customer_main">
+								<label for="">Họ và tên :</label>
+								<input
+									type="text"
+									class="customer_input1"
+									placeholder="Họ và tên"
+									id="fullname"
+									name="fullname"
+								/>
+								<label for="">Số điện thoại :</label>
+
+								<input
+									type="text"
+									class="customer_input2"
+									placeholder="Số điện thoại"
+									id="phonenumber"
+									name="phonenumber"
+								/>
+								<label for="">Email :</label>
+
+								<input
+									type="text"
+									class="customer_input3"
+									placeholder="Email của bạn "
+									id="email"
+									name="email"
+								/>
+							</div>
+						</div>
+					</div>
+					<div class="block_payment">
+						<p class="block_infor_title">Thông tin nhận hàng :</p>
+						<div class="block_payment_wrapper">
+							<div class="block_payment_city">
+								<p>Tỉnh thành phố :</p>
+								<select name="city" id="city">
+									<option value="">Chọn 1 thành phố</option>
+								</select>
+							</div>
+							<div class="block_payment_district">
+								<p>Quận huyện :</p>
+								<select name="district" id="district">
+									<option value="">Chọn 1 Quận Huyện</option>
+								</select>
+							</div>
+						</div>
+						<div class="block_customer_note">
+							<label for="">Ghi chú : </label>
+							<input
+								type="text"
+								class="customer_note"
+								name="customer_note"
+								placeholder="Ghi chú"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="container_total_payment">
+					<div class="total_box">
+						<span class="total_temp">Tổng tiền tạm tính : </span>
+						<span class="total"> $</span>
+					</div>
+					<button class="btn_payment">Tiếp tục</button>
+					<button class="choose_more">Chọn thêm sản phẩm khác</button>
+				</div>
+			</div>
+		</section>
+		<script type="module" src="../public/js/index.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	</body>
+</html>

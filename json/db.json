@@ -2,43 +2,168 @@
   "products": [
     {
       "id": "1",
-      "title": "Tai nghe vipvip Tai nghe Tí m",
+      "title": "Tai nghe den smart",
       "description": "An apple mobile which is nothing like apple",
-      "price": 549,
+      "price": 22,
       "rating": 4.69,
-      "image": "shop1.png"
+      "image": "shop1.png",
+      "bestseller": 1,
+      "quantity": 1,
+      "comments": [
+        {
+          "username": "\"haudev\"",
+          "content": "sdfsdfsdfsdf"
+        },
+        {
+          "username": "\"haudev\"",
+          "content": "sdfsdfsdfdsf"
+        }
+      ],
+      "category_id": 1
     },
     {
       "id": "2",
-      "title": "Tai nghe vipvip Tai nghe Đỏ ",
+      "title": "Tai nghe the thao ",
       "description": "An apple mobile which is nothing like apple",
-      "price": 549,
+      "price": 233,
       "rating": 4.69,
-      "image": "shop2.png"
+      "image": "shop2.png",
+      "bestseller": 1,
+      "quantity": 1,
+      "comments": [
+        {
+          "username": "\"haudev\"",
+          "content": "xin chaof m"
+        },
+        {
+          "username": "\"hotb\"",
+          "content": "hghjghjgh"
+        }
+      ],
+      "category_id": 2
     },
     {
       "id": "3",
-      "title": "Tai nghe vipvip Tai nghe Bl ack vipBro siêu c",
+      "title": "Tai nghe vipvip Tai nghe ",
       "description": "An apple mobile which is nothing like apple",
-      "price": 549,
+      "price": 44,
       "rating": 4.69,
-      "image": "shop3.png"
+      "image": "shop3.png",
+      "bestseller": 1,
+      "quantity": 1,
+      "comments": [
+        {
+          "username": "\"haudev\"",
+          "content": "sản phẩm tốt"
+        },
+        {
+          "username": "\"haudev\"",
+          "content": "sfsdfdsf"
+        }
+      ],
+      "category_id": 3
     },
     {
       "id": "4",
-      "title": "Tai nghe vipvip Tai nghe Bl ack vipBro siêu c",
+      "title": "Tai nghe  c",
       "description": "An apple mobile which is nothing like apple",
-      "price": 549,
+      "price": 77,
       "rating": 4.69,
-      "image": "shop4.png"
+      "image": "shop4.png",
+      "bestseller": 1,
+      "quantity": 1,
+      "comments": [
+        {
+          "username": "\"haudev\"",
+          "content": "sdfsdfsdfds"
+        },
+        {
+          "username": "\"hotb\"",
+          "content": "sản phẩm đỏ đệp"
+        }
+      ],
+      "category_id": 4
     },
     {
       "id": "5",
-      "title": "Tai nghe vipvip Tai nghe Bl ack vipBro siêu c",
+      "title": "Tai nghe  vipBro siêu c",
       "description": "An apple mobile which is nothing like apple",
-      "price": 549,
+      "price": 88,
       "rating": 4.69,
-      "image": "shop5.png"
+      "image": "shop5.png",
+      "bestseller": 1,
+      "quantity": 1,
+      "comments": [],
+      "category_id": 3
+    },
+    {
+      "id": "6",
+      "title": "codetech",
+      "description": "sản phẩm vippro",
+      "price": 777,
+      "image": "earphone_3pro_white-removebg-preview.png",
+      "bestseller": 1,
+      "quantity": 1,
+      "comments": [],
+      "category_id": 1
+    },
+    {
+      "id": "7",
+      "title": "Tai nghe Gray",
+      "description": "sản phẩm vippr",
+      "price": 880,
+      "image": "headphonesquyphai-removebg-preview.png",
+      "bestseller": 1,
+      "quantity": 1,
+      "comments": [
+        {
+          "username": "\"haudev\"",
+          "content": "sdfsdfs"
+        }
+      ],
+      "category_id": 2
+    },
+    {
+      "id": "8",
+      "title": "timkiem",
+      "description": "fsdfsdf",
+      "price": 221,
+      "raiting": 3.23,
+      "image": "buds.png",
+      "bestseller": 1,
+      "quantity": 1,
+      "comments": [
+        {
+          "username": "\"haudev\"",
+          "content": "sản phẩm tốt"
+        },
+        {
+          "username": "\"hotb\"",
+          "content": "ahihi"
+        }
+      ],
+      "category_id": 4
+    },
+    {
+      "id": "9",
+      "title": "tai nghe trắng",
+      "description": "sản phẩm vippro",
+      "price": 55,
+      "raiting": 3.23,
+      "image": "earphone_3pro_white-removebg-preview.png",
+      "bestseller": 0,
+      "quantity": 1,
+      "comments": [],
+      "category_id": 2
+    },
+    {
+      "id": "8f4a",
+      "title": "spiderman",
+      "description": "sản phẩm vippro",
+      "price": "333",
+      "raiting": 3.23,
+      "image": "ear-pads-for-airpods-max-2-3d-mo-removebg-preview.png",
+      "bestseller": 0
     }
   ],
   "users": [
@@ -65,9 +190,7 @@
     {
       "id": "ee15",
       "username": "hotb",
-      "password": "123456789",
-      "email": "dangvanhaufpt2019@gmail.com",
-      "role": "Người dùng"
+      "password": "hauvippro"
     }
   ],
   "voucher": [
@@ -82,6 +205,94 @@
       "voucher": "SALE50",
       "percentDiscount": 50,
       "id": "74b5"
+    }
+  ],
+  "orderList": [
+    {
+      "id": "d12a",
+      "fullname": "Đặng Văn hậu",
+      "phonenumber": "0337171563",
+      "email": "dangvanhaufpt2019@gmail.com",
+      "address": "Tỉnh Vĩnh PhúcQuận Hà Đông",
+      "cartItem": [
+        {
+          "id": "3",
+          "title": "Tai nghe vipvip Tai nghe ",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "rating": 4.69,
+          "image": "shop3.png",
+          "bestseller": 1,
+          "quantity": 1,
+          "comments": []
+        }
+      ]
+    },
+    {
+      "id": "2358",
+      "fullname": "Đặng Văn hậu",
+      "phonenumber": "0337171563",
+      "email": "dangvanhaufpt2019@gmail.com",
+      "address": "Tỉnh Vĩnh PhúcQuận Hà Đông",
+      "cartItem": [
+        {
+          "id": "1",
+          "title": "Tai nghe den smart",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "rating": 4.69,
+          "image": "shop1.png",
+          "bestseller": 1,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "446c",
+      "fullname": "Đặng Văn hậu",
+      "phonenumber": "0337171563",
+      "email": "dangvanhaufpt2019@gmail.com",
+      "address": "Tỉnh Hải DươngHuyện Mê Linh",
+      "cartItem": [
+        {
+          "id": "2",
+          "title": "Tai nghe the thao ",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "rating": 4.69,
+          "image": "shop2.png",
+          "bestseller": 1,
+          "quantity": 1,
+          "comments": [
+            {
+              "username": "\"haudev\"",
+              "content": "xin chaof m"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "category": [
+    {
+      "category_id": 1,
+      "category_name": "Tai nghe the thao",
+      "id": "df64"
+    },
+    {
+      "category_id": 2,
+      "category_name": "Tai nghe Không dây",
+      "id": "a63f"
+    },
+    {
+      "category_id": 3,
+      "category_name": "Tai nghe Có dây",
+      "id": "bee0"
+    },
+    {
+      "category_id": 4,
+      "category_name": "Tai nghe thông minh",
+      "id": "76f5"
     }
   ]
 }
